@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06F9CF4B2434BA44003EA2B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9CF4A2434BA44003EA2B6 /* UIKit.framework */; };
+		06F9CF4D2434BA44003EA2B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9CF4C2434BA44003EA2B6 /* Foundation.framework */; };
+		06F9CF4F2434BA44003EA2B6 /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9CF4E2434BA44003EA2B6 /* CydiaSubstrate.framework */; };
+		06F9CF582434BA44003EA2B6 /* HookSpringBoard.mm in Sources */ = {isa = PBXBuildFile; fileRef = 06F9CF572434BA44003EA2B6 /* HookSpringBoard.mm */; };
+		06F9CFA02434CCC0003EA2B6 /* IOTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF802434CCC0003EA2B6 /* IOTypes.h */; };
+		06F9CFA12434CCC0003EA2B6 /* IOKitKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF812434CCC0003EA2B6 /* IOKitKeys.h */; };
+		06F9CFA22434CCC0003EA2B6 /* IOMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF822434CCC0003EA2B6 /* IOMessage.h */; };
+		06F9CFA32434CCC0003EA2B6 /* IOReturn.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF832434CCC0003EA2B6 /* IOReturn.h */; };
+		06F9CFA42434CCC0003EA2B6 /* OSMessageNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF842434CCC0003EA2B6 /* OSMessageNotification.h */; };
+		06F9CFA52434CCC0003EA2B6 /* IOPM.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF862434CCC0003EA2B6 /* IOPM.h */; };
+		06F9CFA62434CCC0003EA2B6 /* IOPMLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF872434CCC0003EA2B6 /* IOPMLib.h */; };
+		06F9CFA72434CCC0003EA2B6 /* IOPMKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF882434CCC0003EA2B6 /* IOPMKeys.h */; };
+		06F9CFA82434CCC0003EA2B6 /* IOPMLibDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF892434CCC0003EA2B6 /* IOPMLibDefs.h */; };
+		06F9CFA92434CCC0003EA2B6 /* IOPSKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF8B2434CCC0003EA2B6 /* IOPSKeys.h */; };
+		06F9CFAA2434CCC0003EA2B6 /* IOUPSPlugIn.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF8C2434CCC0003EA2B6 /* IOUPSPlugIn.h */; };
+		06F9CFAB2434CCC0003EA2B6 /* IOPowerSources.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF8D2434CCC0003EA2B6 /* IOPowerSources.h */; };
+		06F9CFAC2434CCC0003EA2B6 /* OSKext.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF8E2434CCC0003EA2B6 /* OSKext.h */; };
+		06F9CFAD2434CCC0003EA2B6 /* IOHIDEventSystemClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF902434CCC0003EA2B6 /* IOHIDEventSystemClient.h */; };
+		06F9CFAE2434CCC0003EA2B6 /* IOHIDService.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF912434CCC0003EA2B6 /* IOHIDService.h */; };
+		06F9CFAF2434CCC0003EA2B6 /* IOHIDNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF922434CCC0003EA2B6 /* IOHIDNotification.h */; };
+		06F9CFB02434CCC0003EA2B6 /* IOHIDEventQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF932434CCC0003EA2B6 /* IOHIDEventQueue.h */; };
+		06F9CFB12434CCC0003EA2B6 /* IOHIDEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF942434CCC0003EA2B6 /* IOHIDEvent.h */; };
+		06F9CFB22434CCC0003EA2B6 /* IOHIDEventSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF952434CCC0003EA2B6 /* IOHIDEventSystem.h */; };
+		06F9CFB32434CCC0003EA2B6 /* IOHIDEventSystemConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF962434CCC0003EA2B6 /* IOHIDEventSystemConnection.h */; };
+		06F9CFB42434CCC0003EA2B6 /* IOHIDEventData.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF972434CCC0003EA2B6 /* IOHIDEventData.h */; };
+		06F9CFB52434CCC0003EA2B6 /* IOHIDEventTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF982434CCC0003EA2B6 /* IOHIDEventTypes.h */; };
+		06F9CFB62434CCC0003EA2B6 /* IOHIDEvent7.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF992434CCC0003EA2B6 /* IOHIDEvent7.h */; };
+		06F9CFB72434CCC0003EA2B6 /* IOHIDDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF9A2434CCC0003EA2B6 /* IOHIDDisplay.h */; };
+		06F9CFB82434CCC0003EA2B6 /* IOHIDEventTypes7.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF9B2434CCC0003EA2B6 /* IOHIDEventTypes7.h */; };
+		06F9CFB92434CCC0003EA2B6 /* IOHIDSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF9C2434CCC0003EA2B6 /* IOHIDSession.h */; };
+		06F9CFBA2434CCC0003EA2B6 /* IOHIDUserDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF9D2434CCC0003EA2B6 /* IOHIDUserDevice.h */; };
+		06F9CFBB2434CCC0003EA2B6 /* IOKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF9E2434CCC0003EA2B6 /* IOKit.h */; };
+		06F9CFBC2434CCC0003EA2B6 /* IOKitLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F9CF9F2434CCC0003EA2B6 /* IOKitLib.h */; };
+		06F9D00824372928003EA2B6 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9D00724372928003EA2B6 /* IOKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06F9CF472434BA44003EA2B6 /* HookSpringBoard.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = HookSpringBoard.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		06F9CF4A2434BA44003EA2B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		06F9CF4C2434BA44003EA2B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		06F9CF4E2434BA44003EA2B6 /* CydiaSubstrate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CydiaSubstrate.framework; path = Library/Frameworks/CydiaSubstrate.framework; sourceTree = DEVELOPER_DIR; };
+		06F9CF532434BA44003EA2B6 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		06F9CF552434BA44003EA2B6 /* HookSpringBoard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HookSpringBoard-Prefix.pch"; path = "../HookSpringBoard-Prefix.pch"; sourceTree = "<group>"; };
+		06F9CF562434BA44003EA2B6 /* HookSpringBoard.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = HookSpringBoard.xm; sourceTree = "<group>"; };
+		06F9CF572434BA44003EA2B6 /* HookSpringBoard.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HookSpringBoard.mm; sourceTree = "<group>"; };
+		06F9CF5C2434BA44003EA2B6 /* HookSpringBoard.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HookSpringBoard.plist; sourceTree = "<group>"; };
+		06F9CF802434CCC0003EA2B6 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
+		06F9CF812434CCC0003EA2B6 /* IOKitKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitKeys.h; sourceTree = "<group>"; };
+		06F9CF822434CCC0003EA2B6 /* IOMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOMessage.h; sourceTree = "<group>"; };
+		06F9CF832434CCC0003EA2B6 /* IOReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReturn.h; sourceTree = "<group>"; };
+		06F9CF842434CCC0003EA2B6 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
+		06F9CF862434CCC0003EA2B6 /* IOPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPM.h; sourceTree = "<group>"; };
+		06F9CF872434CCC0003EA2B6 /* IOPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPMLib.h; sourceTree = "<group>"; };
+		06F9CF882434CCC0003EA2B6 /* IOPMKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPMKeys.h; sourceTree = "<group>"; };
+		06F9CF892434CCC0003EA2B6 /* IOPMLibDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPMLibDefs.h; sourceTree = "<group>"; };
+		06F9CF8B2434CCC0003EA2B6 /* IOPSKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPSKeys.h; sourceTree = "<group>"; };
+		06F9CF8C2434CCC0003EA2B6 /* IOUPSPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUPSPlugIn.h; sourceTree = "<group>"; };
+		06F9CF8D2434CCC0003EA2B6 /* IOPowerSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPowerSources.h; sourceTree = "<group>"; };
+		06F9CF8E2434CCC0003EA2B6 /* OSKext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKext.h; sourceTree = "<group>"; };
+		06F9CF902434CCC0003EA2B6 /* IOHIDEventSystemClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventSystemClient.h; sourceTree = "<group>"; };
+		06F9CF912434CCC0003EA2B6 /* IOHIDService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDService.h; sourceTree = "<group>"; };
+		06F9CF922434CCC0003EA2B6 /* IOHIDNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDNotification.h; sourceTree = "<group>"; };
+		06F9CF932434CCC0003EA2B6 /* IOHIDEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventQueue.h; sourceTree = "<group>"; };
+		06F9CF942434CCC0003EA2B6 /* IOHIDEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEvent.h; sourceTree = "<group>"; };
+		06F9CF952434CCC0003EA2B6 /* IOHIDEventSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventSystem.h; sourceTree = "<group>"; };
+		06F9CF962434CCC0003EA2B6 /* IOHIDEventSystemConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventSystemConnection.h; sourceTree = "<group>"; };
+		06F9CF972434CCC0003EA2B6 /* IOHIDEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventData.h; sourceTree = "<group>"; };
+		06F9CF982434CCC0003EA2B6 /* IOHIDEventTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventTypes.h; sourceTree = "<group>"; };
+		06F9CF992434CCC0003EA2B6 /* IOHIDEvent7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEvent7.h; sourceTree = "<group>"; };
+		06F9CF9A2434CCC0003EA2B6 /* IOHIDDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDDisplay.h; sourceTree = "<group>"; };
+		06F9CF9B2434CCC0003EA2B6 /* IOHIDEventTypes7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventTypes7.h; sourceTree = "<group>"; };
+		06F9CF9C2434CCC0003EA2B6 /* IOHIDSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDSession.h; sourceTree = "<group>"; };
+		06F9CF9D2434CCC0003EA2B6 /* IOHIDUserDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDUserDevice.h; sourceTree = "<group>"; };
+		06F9CF9E2434CCC0003EA2B6 /* IOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKit.h; sourceTree = "<group>"; };
+		06F9CF9F2434CCC0003EA2B6 /* IOKitLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
+		06F9D00724372928003EA2B6 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IOKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06F9CF432434BA44003EA2B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F9CF4B2434BA44003EA2B6 /* UIKit.framework in Frameworks */,
+				06F9CF4D2434BA44003EA2B6 /* Foundation.framework in Frameworks */,
+				06F9CF4F2434BA44003EA2B6 /* CydiaSubstrate.framework in Frameworks */,
+				06F9D00824372928003EA2B6 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06F9CF3C2434BA44003EA2B6 = {
+			isa = PBXGroup;
+			children = (
+				06F9CF502434BA44003EA2B6 /* HookSpringBoard */,
+				06F9CF492434BA44003EA2B6 /* Frameworks */,
+				06F9CF482434BA44003EA2B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06F9CF482434BA44003EA2B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF472434BA44003EA2B6 /* HookSpringBoard.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06F9CF492434BA44003EA2B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF4A2434BA44003EA2B6 /* UIKit.framework */,
+				06F9CF4C2434BA44003EA2B6 /* Foundation.framework */,
+				06F9CF4E2434BA44003EA2B6 /* CydiaSubstrate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06F9CF502434BA44003EA2B6 /* HookSpringBoard */ = {
+			isa = PBXGroup;
+			children = (
+				06F9D00724372928003EA2B6 /* IOKit.framework */,
+				06F9CF7F2434CCC0003EA2B6 /* IOKit */,
+				06F9CF562434BA44003EA2B6 /* HookSpringBoard.xm */,
+				06F9CF572434BA44003EA2B6 /* HookSpringBoard.mm */,
+				06F9CF512434BA44003EA2B6 /* Package */,
+				06F9CF542434BA44003EA2B6 /* Supporting Files */,
+			);
+			path = HookSpringBoard;
+			sourceTree = "<group>";
+		};
+		06F9CF512434BA44003EA2B6 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF522434BA44003EA2B6 /* DEBIAN */,
+				06F9CF592434BA44003EA2B6 /* Library */,
+			);
+			path = Package;
+			sourceTree = "<group>";
+		};
+		06F9CF522434BA44003EA2B6 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF532434BA44003EA2B6 /* control */,
+			);
+			path = DEBIAN;
+			sourceTree = "<group>";
+		};
+		06F9CF542434BA44003EA2B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF552434BA44003EA2B6 /* HookSpringBoard-Prefix.pch */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06F9CF592434BA44003EA2B6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF5A2434BA44003EA2B6 /* MobileSubstrate */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		06F9CF5A2434BA44003EA2B6 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF5B2434BA44003EA2B6 /* DynamicLibraries */,
+			);
+			path = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		06F9CF5B2434BA44003EA2B6 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF5C2434BA44003EA2B6 /* HookSpringBoard.plist */,
+			);
+			path = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+		06F9CF7F2434CCC0003EA2B6 /* IOKit */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF802434CCC0003EA2B6 /* IOTypes.h */,
+				06F9CF812434CCC0003EA2B6 /* IOKitKeys.h */,
+				06F9CF822434CCC0003EA2B6 /* IOMessage.h */,
+				06F9CF832434CCC0003EA2B6 /* IOReturn.h */,
+				06F9CF842434CCC0003EA2B6 /* OSMessageNotification.h */,
+				06F9CF852434CCC0003EA2B6 /* pwr_mgt */,
+				06F9CF8A2434CCC0003EA2B6 /* ps */,
+				06F9CF8E2434CCC0003EA2B6 /* OSKext.h */,
+				06F9CF8F2434CCC0003EA2B6 /* hid */,
+				06F9CF9E2434CCC0003EA2B6 /* IOKit.h */,
+				06F9CF9F2434CCC0003EA2B6 /* IOKitLib.h */,
+			);
+			path = IOKit;
+			sourceTree = "<group>";
+		};
+		06F9CF852434CCC0003EA2B6 /* pwr_mgt */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF862434CCC0003EA2B6 /* IOPM.h */,
+				06F9CF872434CCC0003EA2B6 /* IOPMLib.h */,
+				06F9CF882434CCC0003EA2B6 /* IOPMKeys.h */,
+				06F9CF892434CCC0003EA2B6 /* IOPMLibDefs.h */,
+			);
+			path = pwr_mgt;
+			sourceTree = "<group>";
+		};
+		06F9CF8A2434CCC0003EA2B6 /* ps */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF8B2434CCC0003EA2B6 /* IOPSKeys.h */,
+				06F9CF8C2434CCC0003EA2B6 /* IOUPSPlugIn.h */,
+				06F9CF8D2434CCC0003EA2B6 /* IOPowerSources.h */,
+			);
+			path = ps;
+			sourceTree = "<group>";
+		};
+		06F9CF8F2434CCC0003EA2B6 /* hid */ = {
+			isa = PBXGroup;
+			children = (
+				06F9CF902434CCC0003EA2B6 /* IOHIDEventSystemClient.h */,
+				06F9CF912434CCC0003EA2B6 /* IOHIDService.h */,
+				06F9CF922434CCC0003EA2B6 /* IOHIDNotification.h */,
+				06F9CF932434CCC0003EA2B6 /* IOHIDEventQueue.h */,
+				06F9CF942434CCC0003EA2B6 /* IOHIDEvent.h */,
+				06F9CF952434CCC0003EA2B6 /* IOHIDEventSystem.h */,
+				06F9CF962434CCC0003EA2B6 /* IOHIDEventSystemConnection.h */,
+				06F9CF972434CCC0003EA2B6 /* IOHIDEventData.h */,
+				06F9CF982434CCC0003EA2B6 /* IOHIDEventTypes.h */,
+				06F9CF992434CCC0003EA2B6 /* IOHIDEvent7.h */,
+				06F9CF9A2434CCC0003EA2B6 /* IOHIDDisplay.h */,
+				06F9CF9B2434CCC0003EA2B6 /* IOHIDEventTypes7.h */,
+				06F9CF9C2434CCC0003EA2B6 /* IOHIDSession.h */,
+				06F9CF9D2434CCC0003EA2B6 /* IOHIDUserDevice.h */,
+			);
+			path = hid;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		06F9CF442434BA44003EA2B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F9CFA62434CCC0003EA2B6 /* IOPMLib.h in Headers */,
+				06F9CFBB2434CCC0003EA2B6 /* IOKit.h in Headers */,
+				06F9CFA72434CCC0003EA2B6 /* IOPMKeys.h in Headers */,
+				06F9CFB32434CCC0003EA2B6 /* IOHIDEventSystemConnection.h in Headers */,
+				06F9CFAC2434CCC0003EA2B6 /* OSKext.h in Headers */,
+				06F9CFAA2434CCC0003EA2B6 /* IOUPSPlugIn.h in Headers */,
+				06F9CFAE2434CCC0003EA2B6 /* IOHIDService.h in Headers */,
+				06F9CFB42434CCC0003EA2B6 /* IOHIDEventData.h in Headers */,
+				06F9CFB92434CCC0003EA2B6 /* IOHIDSession.h in Headers */,
+				06F9CFB02434CCC0003EA2B6 /* IOHIDEventQueue.h in Headers */,
+				06F9CFA32434CCC0003EA2B6 /* IOReturn.h in Headers */,
+				06F9CFB62434CCC0003EA2B6 /* IOHIDEvent7.h in Headers */,
+				06F9CFA82434CCC0003EA2B6 /* IOPMLibDefs.h in Headers */,
+				06F9CFA02434CCC0003EA2B6 /* IOTypes.h in Headers */,
+				06F9CFA42434CCC0003EA2B6 /* OSMessageNotification.h in Headers */,
+				06F9CFAB2434CCC0003EA2B6 /* IOPowerSources.h in Headers */,
+				06F9CFB22434CCC0003EA2B6 /* IOHIDEventSystem.h in Headers */,
+				06F9CFA12434CCC0003EA2B6 /* IOKitKeys.h in Headers */,
+				06F9CFBA2434CCC0003EA2B6 /* IOHIDUserDevice.h in Headers */,
+				06F9CFA92434CCC0003EA2B6 /* IOPSKeys.h in Headers */,
+				06F9CFAD2434CCC0003EA2B6 /* IOHIDEventSystemClient.h in Headers */,
+				06F9CFAF2434CCC0003EA2B6 /* IOHIDNotification.h in Headers */,
+				06F9CFA22434CCC0003EA2B6 /* IOMessage.h in Headers */,
+				06F9CFA52434CCC0003EA2B6 /* IOPM.h in Headers */,
+				06F9CFB12434CCC0003EA2B6 /* IOHIDEvent.h in Headers */,
+				06F9CFB52434CCC0003EA2B6 /* IOHIDEventTypes.h in Headers */,
+				06F9CFBC2434CCC0003EA2B6 /* IOKitLib.h in Headers */,
+				06F9CFB82434CCC0003EA2B6 /* IOHIDEventTypes7.h in Headers */,
+				06F9CFB72434CCC0003EA2B6 /* IOHIDDisplay.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		06F9CF462434BA44003EA2B6 /* HookSpringBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06F9CF5F2434BA44003EA2B6 /* Build configuration list for PBXNativeTarget "HookSpringBoard" */;
+			buildPhases = (
+				06F9CF412434BA44003EA2B6 /* ShellScript */,
+				06F9CF422434BA44003EA2B6 /* Sources */,
+				06F9CF432434BA44003EA2B6 /* Frameworks */,
+				06F9CF442434BA44003EA2B6 /* Headers */,
+				06F9CF452434BA44003EA2B6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HookSpringBoard;
+			productName = HookSpringBoard;
+			productReference = 06F9CF472434BA44003EA2B6 /* HookSpringBoard.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06F9CF3D2434BA44003EA2B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1110;
+				TargetAttributes = {
+					06F9CF462434BA44003EA2B6 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 06F9CF402434BA44003EA2B6 /* Build configuration list for PBXProject "HookSpringBoard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06F9CF3C2434BA44003EA2B6;
+			productRefGroup = 06F9CF482434BA44003EA2B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06F9CF462434BA44003EA2B6 /* HookSpringBoard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06F9CF412434BA44003EA2B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos\n";
+		};
+		06F9CF452434BA44003EA2B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06F9CF422434BA44003EA2B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F9CF582434BA44003EA2B6 /* HookSpringBoard.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		06F9CF5D2434BA44003EA2B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(MonkeyDevPath)/frameworks/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"HookSpringBoard\\\"\"";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06F9CF5E2434BA44003EA2B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(MonkeyDevPath)/frameworks/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"HookSpringBoard\\\"\"";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		06F9CF602434BA44003EA2B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DK463P5L32;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HookSpringBoard",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HookSpringBoard/HookSpringBoard-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				MonkeyDevBuildPackageOnAnyBuild = NO;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = 127.0.0.1;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 1025;
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevkillProcessOnInstall = SpringBoard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		06F9CF612434BA44003EA2B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DK463P5L32;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HookSpringBoard",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HookSpringBoard/HookSpringBoard-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				MonkeyDevBuildPackageOnAnyBuild = NO;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = 127.0.0.1;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 1025;
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevkillProcessOnInstall = SpringBoard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06F9CF402434BA44003EA2B6 /* Build configuration list for PBXProject "HookSpringBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06F9CF5D2434BA44003EA2B6 /* Release */,
+				06F9CF5E2434BA44003EA2B6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06F9CF5F2434BA44003EA2B6 /* Build configuration list for PBXNativeTarget "HookSpringBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06F9CF602434BA44003EA2B6 /* Release */,
+				06F9CF612434BA44003EA2B6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06F9CF3D2434BA44003EA2B6 /* Project object */;
+}
