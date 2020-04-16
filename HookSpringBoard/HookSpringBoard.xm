@@ -131,7 +131,7 @@ void newIOEvent(IOHIDEventRef event, IOHIDEventRef childEvent)
 */
 
 
-/*
+
 //MGCopyAnswer
 
 extern "C" CFTypeRef MGCopyAnswer(CFStringRef prop);
@@ -168,14 +168,14 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
         return refNumber;
     }
     
-    if ([keyStr isEqualToString:@"VasUgeSzVyHdB27g2XpN0g"]) {
-        NSString *updateNumber = @"KF1111111111";
-        return (__bridge_retained CFTypeRef)updateNumber;
-        
-    }
     
     if ([keyStr isEqualToString:@"UserAssignedDeviceName"]) {
-        NSString *updateNumber = @"lalalalala";
+        NSString *updateNumber = @"Hook-lalalala";
+        return (__bridge_retained CFTypeRef)updateNumber;
+    }
+    
+    if ([keyStr isEqualToString:@"SerialNumber"]) {
+        NSString *updateNumber = @"Hook-lalalala2";
         return (__bridge_retained CFTypeRef)updateNumber;
     }
     
@@ -200,7 +200,7 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
     
 }
 
-*/
+
 
 %hook UIDevice
 
