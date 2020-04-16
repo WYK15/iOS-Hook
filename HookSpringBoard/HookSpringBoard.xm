@@ -32,14 +32,13 @@ static void writeFile(NSString* filepath,NSString* content,bool isNewOne)
     [fielHandle writeData:stringData]; //追加写入数据
 }
 
-
 /*
 %hook SpringBoard
 
 
 + (id)sharedInstance
 {
-	%log;
+    %log;
     
     UIAlertView *alert = [[UIAlertView alloc]
     initWithTitle:@"这是Hook"
@@ -48,7 +47,7 @@ static void writeFile(NSString* filepath,NSString* content,bool isNewOne)
     otherButtonTitles:nil];
     [alert show];
     
-	return %orig;
+    return %orig;
 }
 
 // 有效：但是好像不处理点击事件
@@ -101,21 +100,6 @@ void (*old_AppendEvent)(IOHIDEventRef event, IOHIDEventRef childEvent);
 
 void newIOEvent(IOHIDEventRef event, IOHIDEventRef childEvent)
 {
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *eventInfo1 = [NSString stringWithFormat:@"%@",event];
-    [fileManager createFileAtPath:@"/tmp/tt1.txt" contents:[eventInfo1 dataUsingEncoding: NSUTF8StringEncoding] attributes:nil];
-     
-    old_AppendEvent(event,childEvent);
-    
-    NSString *eventInfo = [NSString stringWithFormat:@"%@",event];
-    [fileManager createFileAtPath:@"/tmp/tt2.txt" contents:[eventInfo dataUsingEncoding: NSUTF8StringEncoding] attributes:nil];
-    
-    NSString *addrInfoNew = [NSString stringWithFormat:@"new: %x",newIOEvent];
-    NSString *addrInfoOld = [NSString stringWithFormat:@"old: %x",old_AppendEvent];
-    [fileManager createFileAtPath:@"/tmp/addr.txt" contents:[[addrInfoOld stringByAppendingString:addrInfoNew] dataUsingEncoding: NSUTF8StringEncoding] attributes:nil];
-    
-    
     old_AppendEvent(event,childEvent);
     
     
@@ -147,6 +131,7 @@ void newIOEvent(IOHIDEventRef event, IOHIDEventRef childEvent)
 */
 
 
+/*
 //MGCopyAnswer
 
 extern "C" CFTypeRef MGCopyAnswer(CFStringRef prop);
@@ -215,5 +200,24 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
     
 }
 
+*/
+
+%hook UIDevice
+
+-(NSString *)systemVersion
+{
+    NSDate *datenow = [NSDate date];
+    NSString *data = [NSString stringWithFormat:@"%@",datenow];
+    
+    writeFile(@"/tmp/t3.txt",data,true);
+    NSString *fakeVer = @"11.1.1";
+    return fakeVer;
+}
+
+-(NSString *)localizedModel {
+    return @"mmmmm";
+}
+
+%end
 
 

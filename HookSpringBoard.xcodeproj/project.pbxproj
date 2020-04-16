@@ -409,6 +409,7 @@
 				MonkeyDevPath = /opt/MonkeyDev;
 				MonkeyDevTheosPath = /opt/theos;
 				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"HookSpringBoard\\\"\"";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -442,6 +443,7 @@
 				MonkeyDevTheosPath = /opt/theos;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"HookSpringBoard\\\"\"";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
@@ -474,6 +476,7 @@
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.UIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -505,6 +508,7 @@
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.UIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
