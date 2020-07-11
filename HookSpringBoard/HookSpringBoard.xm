@@ -191,7 +191,7 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
     void *h = dlopen(dylib_path,RTLD_GLOBAL);
     NSString *strDylibFile = @"/usr/lib/libMobileGestalt.dylib";
     if (h) {
-        MSImageRef ref = MSGetImageByName([strDylibFile UTF8String]);
+        MSImageRef ref = MSGetImageByName(dylib_path);
         void * MGCopyAnswerFn = MSFindSymbol(ref, "_MGCopyAnswer");
         MSHookFunction((void*)((uint8_t*)MGCopyAnswerFn + 8), (void*)new_MGCopyAnswer,
                     (void**)&orig_MGCopyAnswer);
