@@ -6,6 +6,8 @@
 	<dict>
 		<key>Bundles</key>
 		<array>
+			<string>com.shumei.newZorro</string>
+			<string>com.shumei.Xcode-9</string>
 			<string>com.apple.Preferences</string>
 			<string>com.apple.springboard</string>
 		</array>

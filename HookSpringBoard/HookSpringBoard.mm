@@ -144,17 +144,7 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
     NSString *keyStr = (__bridge NSString*) prop;
     
     
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *path = @"/tmp/tChangeSerial.txt";
-    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        [fileManager createFileAtPath:path contents:[@"" dataUsingEncoding: NSUTF8StringEncoding] attributes:nil];
-    }
-    NSFileHandle *fielHandle = [NSFileHandle fileHandleForUpdatingAtPath:path];
-    [fielHandle seekToEndOfFile];  
-    NSData* stringData  = [ [keyStr stringByAppendingString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding];
-    [fielHandle writeData:stringData]; 
-    
+    writeFile(@"/tmp/AAMGCopys.txt",keyStr,NO);
     
     
     if ([keyStr isEqualToString:@"ProductVersion"]) {
@@ -180,22 +170,39 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
         return (__bridge_retained CFTypeRef)updateNumber;
     }
     
-    if ([keyStr isEqualToString:@"BluetoothAddress"] || [keyStr isEqualToString:@"k5lVWbXuiZHLA17KGiVUAA"]) {
-        NSString *updateNumber = @"11:22:33:44:55:66";
-        return (__bridge_retained CFTypeRef)updateNumber;
-    }
-    
-    
-    if ([keyStr isEqualToString:@"InternationalMobileEquipmentIdentity"]) {
-        NSString *updateNumber = @"lalalalall3sd23";
-        return (__bridge_retained CFTypeRef)updateNumber;
-    }
-    
     return orig_MGCopyAnswer(prop, outTypeCode);
 }
 
 
-static __attribute__((constructor)) void _logosLocalCtor_084b6fbb(int __unused argc, char __unused **argv, char __unused **envp)
+extern "C" CFDictionaryRef CNCopyCurrentNetworkInfo(CFStringRef interfaceName);
+static CFDictionaryRef (*orig_CNCopyCurrentNetworkInfo)(CFStringRef interfaceName);
+CFDictionaryRef new_CNCopyCurrentNetworkInfo(CFStringRef interfaceName) {
+    NSString *keyStr = (__bridge NSString *)interfaceName;
+
+    if ([keyStr isEqualToString:@"en0"] ){
+
+        NSDictionary *oldDic = (__bridge NSDictionary*)orig_CNCopyCurrentNetworkInfo(interfaceName);
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:oldDic];
+
+        [dic setValue:@"exchen" forKey:@"SSID"];
+        [dic setValue:@"00:60:00:00:00:00" forKey:@"BSSID"];
+        [dic setValue:[@"leowang" dataUsingEncoding:NSUTF8StringEncoding] forKey:@"SSIDDATA"];
+
+        return (__bridge CFDictionaryRef)dic;
+    }
+    else{
+        return orig_CNCopyCurrentNetworkInfo(interfaceName);
+    }
+}
+
+extern "C" void exit(int code);
+static void (*origin_exit)(int code);
+void new_exit(int code) {
+    origin_exit(22);
+}
+
+
+static __attribute__((constructor)) void _logosLocalCtor_e2c0be24(int __unused argc, char __unused **argv, char __unused **envp)
 {
 
 
@@ -203,15 +210,16 @@ static __attribute__((constructor)) void _logosLocalCtor_084b6fbb(int __unused a
     void *h = dlopen(dylib_path,RTLD_GLOBAL);
     NSString *strDylibFile = @"/usr/lib/libMobileGestalt.dylib";
     if (h) {
-        MSImageRef ref = MSGetImageByName([strDylibFile UTF8String]);
+        MSImageRef ref = MSGetImageByName(dylib_path);
         void * MGCopyAnswerFn = MSFindSymbol(ref, "_MGCopyAnswer");
         MSHookFunction((void*)((uint8_t*)MGCopyAnswerFn + 8), (void*)new_MGCopyAnswer,
                     (void**)&orig_MGCopyAnswer);
     }
     
+    MSHookFunction((void*)CNCopyCurrentNetworkInfo,(void*)new_CNCopyCurrentNetworkInfo,(void**)&orig_CNCopyCurrentNetworkInfo);
     
+    MSHookFunction((void*)&exit,(void*)&new_exit,(void**)&origin_exit);
 }
-
 
 
 
@@ -238,7 +246,7 @@ static __attribute__((constructor)) void _logosLocalCtor_084b6fbb(int __unused a
 @class UIDevice; 
 static NSString * (*_logos_orig$_ungrouped$UIDevice$systemVersion)(_LOGOS_SELF_TYPE_NORMAL UIDevice* _LOGOS_SELF_CONST, SEL); static NSString * _logos_method$_ungrouped$UIDevice$systemVersion(_LOGOS_SELF_TYPE_NORMAL UIDevice* _LOGOS_SELF_CONST, SEL); static NSString * (*_logos_orig$_ungrouped$UIDevice$localizedModel)(_LOGOS_SELF_TYPE_NORMAL UIDevice* _LOGOS_SELF_CONST, SEL); static NSString * _logos_method$_ungrouped$UIDevice$localizedModel(_LOGOS_SELF_TYPE_NORMAL UIDevice* _LOGOS_SELF_CONST, SEL); 
 
-#line 216 "/Users/wangyankun/Documents/tmp/HookHID/HookSpringBoard/HookSpringBoard/HookSpringBoard.xm"
+#line 224 "/Users/wangyankun/Documents/tmp/HookHID/HookSpringBoard/HookSpringBoard/HookSpringBoard.xm"
 
 
 
@@ -260,4 +268,4 @@ static NSString * _logos_method$_ungrouped$UIDevice$localizedModel(_LOGOS_SELF_T
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$UIDevice = objc_getClass("UIDevice"); MSHookMessageEx(_logos_class$_ungrouped$UIDevice, @selector(systemVersion), (IMP)&_logos_method$_ungrouped$UIDevice$systemVersion, (IMP*)&_logos_orig$_ungrouped$UIDevice$systemVersion);MSHookMessageEx(_logos_class$_ungrouped$UIDevice, @selector(localizedModel), (IMP)&_logos_method$_ungrouped$UIDevice$localizedModel, (IMP*)&_logos_orig$_ungrouped$UIDevice$localizedModel);} }
-#line 235 "/Users/wangyankun/Documents/tmp/HookHID/HookSpringBoard/HookSpringBoard/HookSpringBoard.xm"
+#line 243 "/Users/wangyankun/Documents/tmp/HookHID/HookSpringBoard/HookSpringBoard/HookSpringBoard.xm"

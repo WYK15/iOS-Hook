@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06D3E6DD24B9D1EE000401B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D3E6DC24B9D1ED000401B5 /* CFNetwork.framework */; };
+		06D3E6DF24B9D24E000401B5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D3E6DE24B9D24E000401B5 /* MobileCoreServices.framework */; };
+		06D3E6E124B9D254000401B5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D3E6E024B9D254000401B5 /* Security.framework */; };
+		06D3E6E324B9D25B000401B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D3E6E224B9D25B000401B5 /* SystemConfiguration.framework */; };
 		06F9CF4B2434BA44003EA2B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9CF4A2434BA44003EA2B6 /* UIKit.framework */; };
 		06F9CF4D2434BA44003EA2B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9CF4C2434BA44003EA2B6 /* Foundation.framework */; };
 		06F9CF4F2434BA44003EA2B6 /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9CF4E2434BA44003EA2B6 /* CydiaSubstrate.framework */; };
@@ -44,6 +48,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06D3E6DC24B9D1ED000401B5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		06D3E6DE24B9D24E000401B5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		06D3E6E024B9D254000401B5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		06D3E6E224B9D25B000401B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		06F9CF472434BA44003EA2B6 /* HookSpringBoard.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = HookSpringBoard.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F9CF4A2434BA44003EA2B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		06F9CF4C2434BA44003EA2B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D3E6E324B9D25B000401B5 /* SystemConfiguration.framework in Frameworks */,
+				06D3E6E124B9D254000401B5 /* Security.framework in Frameworks */,
+				06D3E6DF24B9D24E000401B5 /* MobileCoreServices.framework in Frameworks */,
+				06D3E6DD24B9D1EE000401B5 /* CFNetwork.framework in Frameworks */,
 				06F9CF4B2434BA44003EA2B6 /* UIKit.framework in Frameworks */,
 				06F9CF4D2434BA44003EA2B6 /* Foundation.framework in Frameworks */,
 				06F9CF4F2434BA44003EA2B6 /* CydiaSubstrate.framework in Frameworks */,
@@ -120,6 +132,10 @@
 		06F9CF492434BA44003EA2B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06D3E6E224B9D25B000401B5 /* SystemConfiguration.framework */,
+				06D3E6E024B9D254000401B5 /* Security.framework */,
+				06D3E6DE24B9D24E000401B5 /* MobileCoreServices.framework */,
+				06D3E6DC24B9D1ED000401B5 /* CFNetwork.framework */,
 				06F9CF4A2434BA44003EA2B6 /* UIKit.framework */,
 				06F9CF4C2434BA44003EA2B6 /* Foundation.framework */,
 				06F9CF4E2434BA44003EA2B6 /* CydiaSubstrate.framework */,

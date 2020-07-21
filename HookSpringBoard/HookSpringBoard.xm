@@ -143,17 +143,7 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
     NSString *keyStr = (__bridge NSString*) prop;
     
     
-    ////////////////////////////
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *path = @"/tmp/tChangeSerial.txt";
-    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        [fileManager createFileAtPath:path contents:[@"" dataUsingEncoding: NSUTF8StringEncoding] attributes:nil];
-    }
-    NSFileHandle *fielHandle = [NSFileHandle fileHandleForUpdatingAtPath:path];
-    [fielHandle seekToEndOfFile];  //将节点跳到文件的末尾
-    NSData* stringData  = [ [keyStr stringByAppendingString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding];
-    [fielHandle writeData:stringData]; //追加写入数据
-    ////////////////////////////
+    writeFile(@"/tmp/AAMGCopys.txt",keyStr,NO);
     
     
     if ([keyStr isEqualToString:@"ProductVersion"]) {
@@ -182,6 +172,34 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
     return orig_MGCopyAnswer(prop, outTypeCode);
 }
 
+//hook 扫描端口获取mac地址的方法
+extern "C" CFDictionaryRef CNCopyCurrentNetworkInfo(CFStringRef interfaceName);
+static CFDictionaryRef (*orig_CNCopyCurrentNetworkInfo)(CFStringRef interfaceName);
+CFDictionaryRef new_CNCopyCurrentNetworkInfo(CFStringRef interfaceName) {
+    NSString *keyStr = (__bridge NSString *)interfaceName;
+
+    if ([keyStr isEqualToString:@"en0"] ){
+
+        NSDictionary *oldDic = (__bridge NSDictionary*)orig_CNCopyCurrentNetworkInfo(interfaceName);
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:oldDic];
+
+        [dic setValue:@"exchen" forKey:@"SSID"];
+        [dic setValue:@"00:60:00:00:00:00" forKey:@"BSSID"];
+        [dic setValue:[@"leowang" dataUsingEncoding:NSUTF8StringEncoding] forKey:@"SSIDDATA"];
+
+        return (__bridge CFDictionaryRef)dic;
+    }
+    else{
+        return orig_CNCopyCurrentNetworkInfo(interfaceName);
+    }
+}
+
+extern "C" void exit(int code);
+static void (*origin_exit)(int code);
+void new_exit(int code) {
+    origin_exit(22);
+}
+
 
 %ctor
 {
@@ -197,9 +215,10 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
                     (void**)&orig_MGCopyAnswer);
     }
     
+    MSHookFunction((void*)CNCopyCurrentNetworkInfo,(void*)new_CNCopyCurrentNetworkInfo,(void**)&orig_CNCopyCurrentNetworkInfo);
     
+    MSHookFunction((void*)&exit,(void*)&new_exit,(void**)&origin_exit);
 }
-
 
 
 %hook UIDevice
@@ -215,6 +234,10 @@ CFTypeRef new_MGCopyAnswer(CFStringRef prop, uint32_t* outTypeCode) {
 }
 
 -(NSString *)localizedModel {
+    return @"mmmmm";
+}
+
+-(NSString *)name {
     return @"mmmmm";
 }
 
